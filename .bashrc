@@ -147,8 +147,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=/home/zachary/scripts:$PATH
-export PATH=/home/zachary/.config/scripts:$PATH
+export PATH=$HOME/scripts:$PATH
+export PATH=$HOME/.config/scripts:$PATH
 
 export EDITOR=/usr/bin/vim
 export GIT_EDITOR='vim'
@@ -160,3 +160,9 @@ cat ~/.config/wpg/sequences &
 
 # aliases
 alias vi="vim"
+
+# ssh
+eval `ssh-agent -s` > /dev/null
+for i in $(ls $HOME/.ssh | grep -E "^.*rsa$"); do
+    ssh-add $HOME/.ssh/$i > /dev/null 2>&1
+done
