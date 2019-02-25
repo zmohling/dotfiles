@@ -38,3 +38,6 @@ gtk-3.0/
 neofetch/
 ranger/
 htop/
+.themes
+.fonts
+.vim_runtime
