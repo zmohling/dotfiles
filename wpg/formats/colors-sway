@@ -1,0 +1,21 @@
+set $wallpaper /home/zachary/.config/wpg/wallpapers/nature_mountain_eagle_fog_landscape.jpg
+
+set $background #3c3c3c
+set $foreground #fbffff
+
+set $color0 #3c3c3c
+set $color1 #B9CAC8
+set $color2 #92AAAC
+set $color3 #B2C2BE
+set $color4 #74939A
+set $color5 #9DB1B1
+set $color6 #9FC1C8
+set $color7 #dce2e0
+set $color8 #282828
+set $color9 #d7ffff
+set $color10 #a9eef4
+set $color11 #cfffff
+set $color12 #85cad9
+set $color13 #b6fbfb
+set $color14 #b7ffff
+set $color15 #fbffff

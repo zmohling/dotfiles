@@ -1,0 +1,34 @@
+#!/bin/bash
+# Custom i3exit script to utilize xautolock and betterlockscreen
+
+[[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
+
+case "$1" in
+    lock)
+        xautolock -locknow
+        ;;
+    exit)
+        $logind exit
+        ;;
+    switch_user)
+        dm-tool switch-to-greeter
+        ;;
+    suspend)
+        xautolock -locknow && $logind suspend
+        ;;
+    hibernate)
+        xautolock -locknow && $logind hibernate
+        ;;
+    reboot)
+        $logind reboot
+        ;;
+    poweroff)
+        $logind poweroff
+        ;;
+    *)
+        echo "== ! i3exit: missing or invalid argument ! =="
+        echo "Try again with: lock | logout | switch_user | suspend | hibernate | reboot | shutdown"
+        exit 2
+esac
+
+exit 0

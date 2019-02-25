@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/zachary/.config/wpg/wallpapers/beck_ai_wallpaper.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#232323",
+        "foreground": "#f7f7f7",
+        "cursor": "#f7f7f7"
+    },
+    "colors": {
+        "color0": "#232323",
+        "color1": "#d2d2d2",
+        "color2": "#bcbcbc",
+        "color3": "#bfbfbf",
+        "color4": "#848484",
+        "color5": "#969696",
+        "color6": "#aeaeae",
+        "color7": "#e6e6e6",
+        "color8": "#3d3d3d",
+        "color9": "#eaeaea",
+        "color10": "#e4e4e4",
+        "color11": "#e8e8e8",
+        "color12": "#ababab",
+        "color13": "#c2c2c2",
+        "color14": "#dbdbdb",
+        "color15": "#f7f7f7"
+    }
+}

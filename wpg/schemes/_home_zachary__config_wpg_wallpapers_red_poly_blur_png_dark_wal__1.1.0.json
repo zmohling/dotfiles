@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/zachary/.config/wpg/wallpapers/red_poly_blur.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#252525",
+        "foreground": "#fefaff",
+        "cursor": "#fefaff"
+    },
+    "colors": {
+        "color0": "#252525",
+        "color1": "#C73041",
+        "color2": "#5C748B",
+        "color3": "#BD7688",
+        "color4": "#16698F",
+        "color5": "#EE5667",
+        "color6": "#5B8DA9",
+        "color7": "#c7c4cb",
+        "color8": "#020911",
+        "color9": "#ff2e47",
+        "color10": "#6897c3",
+        "color11": "#ff85a6",
+        "color12": "#118cc4",
+        "color13": "#ff5a75",
+        "color14": "#65bcec",
+        "color15": "#fefaff"
+    }
+}

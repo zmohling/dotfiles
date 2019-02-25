@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/zachary/.config/wpg/wallpapers/mountains_snow_light_sky_winter.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0a0d13",
+        "foreground": "#eaffff",
+        "cursor": "#eaffff"
+    },
+    "colors": {
+        "color0": "#0a0d13",
+        "color1": "#3D80C5",
+        "color2": "#5E87B4",
+        "color3": "#A2B8D0",
+        "color4": "#3A7BC2",
+        "color5": "#917B88",
+        "color6": "#5F99D5",
+        "color7": "#cbdeef",
+        "color8": "#1a2334",
+        "color9": "#3ea6ff",
+        "color10": "#68aefb",
+        "color11": "#baeeff",
+        "color12": "#3a9fff",
+        "color13": "#cd8eb3",
+        "color14": "#67c6ff",
+        "color15": "#eaffff"
+    }
+}
