@@ -14,7 +14,7 @@ if [ "$another" == "LOCK" ] ; then
 elif [ "$another" == "SUSPEND" ] ; then
 	i3exit suspend;
 elif [ "$another" == "LOGOUT" ] ; then
-	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3-msg exit || i3exit exit
+	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3exit exit
 	
 elif [ "$another" == "REBOOT" ] ; then
 	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3exit reboot

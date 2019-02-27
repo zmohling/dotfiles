@@ -29,7 +29,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = menlo:fontformat=truetype:size=8;1
+font-0 = "xft:Source Code Pro:size=10;2"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;2"
 
 modules-left = i3
@@ -54,14 +54,13 @@ index-sort = true
 wrapping-scroll = false
 fuzzy-matching = true
 
+label-focused = %index%
+label-unfocused = %index%
+label-visible = %index%
+label-urgent = %index%
+
 ; Only show workspaces on the same output as the bar
 pin-workspaces = false
-
-;ws-icon-0 = 1;
-;ws-icon-1 = 2;
-;ws-icon-2 = 9;
-;ws-icon-3 = 10;
-;ws-icon-default = 
 
 label-mode-padding = 1
 label-mode-foreground = ${{colors.foreground}}

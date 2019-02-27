@@ -22,7 +22,7 @@ hide_edge_borders vertical
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8 
+font xft:Source Code Pro 10.5
 
 # Default gaps
 gaps inner 10   
@@ -69,9 +69,9 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec --no-startup-id betterlockscreen -u /home/zachary/pictures/wallpapers/current/wallpaper -b 3
+exec --no-startup-id feh --bg-fill --no-xinerama ~/pictures/wallpapers/current/wallpaper
+exec --no-startup-id betterlockscreen -u ~/pictures/wallpapers/current/wallpaper -b 3
 exec --no-startup-id xautolock -time 5 -locker "i3exit lock" -killtime 10 -killer "xset dpms force off" -nowlocker "betterlockscreen -l blur"
-exec --no-startup-id feh --bg-fill --no-xinerama /home/zachary/pictures/wallpapers/current/wallpaper
 exec --no-startup-id redshift -l 42.0:-93.6 -t 5700:3600 -g 0.8 -m randr -v
 # Restart
 exec_always --no-startup-id ~/.config/scripts/set-wallpaper.sh
