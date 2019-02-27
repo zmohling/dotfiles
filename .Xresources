@@ -34,6 +34,7 @@ rofi.color-normal: #1d1f21, #707880, #1d1f21, #1d1f21, #5f819d
 rofi.color-active: #1d1f21, #707880, #1d1f21, #1d1f21, #5f819d
 rofi.color-urgent: #1d1f21, #707880, #1d1f21, #1d1f21, #5f819d
 
+rofi.fullscreen: true
 rofi.separator-style: solid
 rofi.sidebar-mode: false
 rofi.lines: 5

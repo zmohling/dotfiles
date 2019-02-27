@@ -1,11 +1,3 @@
-/**
- * ROFI Color theme
- * User: bresilla
- copy those lines to: ~/.conf/rofi/ or ~/.Xdefaults
-	rofi.fullscreen:true
-	rofi.theme: ~/.i3/rofi.rasi
- */
-
 * {
 	accent: #FFFFFF;
     foreground:         		@accent;
