@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -nrs 'nature_mountain_eagle_fog_landscape.jpg' 'nature_mountain_eagle_fog_landscape.jpg'
+wpg -nrs 'red_poly_blur.png' 'red_poly_blur.png'

@@ -1,14 +1,14 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $coloract "#94a19f"
-set $colorin "#656f6d"
+set $coloract "#9f2634"
+set $colorin "#6d1a23"
 set $terminal urxvtc
-set_from_resource $color15 i3wm.color15 "#fbffff"
-set_from_resource $split i3wm.color10 "#a9eef4"
-set_from_resource $coloru i3wm.color2 "#92AAAC"
-set_from_resource $color0 i3wm.color0 "#3c3c3c"
-set_from_resource $color8 i3wm.color8 "#282828"
+set_from_resource $color15 i3wm.color15 "#fefaff"
+set_from_resource $split i3wm.color10 "#6897c3"
+set_from_resource $coloru i3wm.color2 "#5C748B"
+set_from_resource $color0 i3wm.color0 "#252525"
+set_from_resource $color8 i3wm.color8 "#020911"
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1

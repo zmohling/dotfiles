@@ -14,10 +14,10 @@ case "$1" in
         dm-tool switch-to-greeter
         ;;
     suspend)
-        xautolock -locknow && $logind suspend
+        $logind suspend
         ;;
     hibernate)
-        xautolock -locknow && $logind hibernate
+        $logind hibernate
         ;;
     reboot)
         $logind reboot

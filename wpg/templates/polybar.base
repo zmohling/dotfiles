@@ -162,7 +162,7 @@ format-muted-padding = 1
 [module/battery]
 type = internal/battery
 battery = BAT1
-adapter = ADCD
+adapter = ACAD
 full-at = 100
 
 format-charging =   <animation-charging> <label-charging>
@@ -171,7 +171,7 @@ format-discharging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full> <ramp-capacity>
 format-full-padding = 1
-format-full-background = ${{colors.active}}
+format-full-background = ${{colors.inactive}}
 
 ramp-capacity-0 = 
 ramp-capacity-1 =  
@@ -187,8 +187,8 @@ animation-charging-1 = 
 animation-charging-2 =  
 animation-charging-3 = 
 animation-charging-4 =  
-format-charging-background = ${{colors.highlight}}
-format-discharging-background = ${{colors.active}}
+format-charging-background = ${{colors.inactive}}
+format-discharging-background = ${{colors.inactive}}
 
 [settings]
 screenchange-reload = true

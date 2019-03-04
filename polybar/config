@@ -1,10 +1,10 @@
 [colors]
-background = ${xrdb:color8:#282828}
-foreground = ${xrdb:color15:#fbffff}
-active = #94a19f
-inactive = #656f6d
-highlight = ${xrdb:color2:#92AAAC}
-error = ${xrdb:color9:#d7ffff}
+background = ${xrdb:color8:#020911}
+foreground = ${xrdb:color15:#fefaff}
+active = #9f2634
+inactive = #6d1a23
+highlight = ${xrdb:color2:#5C748B}
+error = ${xrdb:color9:#ff2e47}
 
 [bar/wpgtk]
 monitor = ${env:MONITOR}
@@ -162,7 +162,7 @@ format-muted-padding = 1
 [module/battery]
 type = internal/battery
 battery = BAT1
-adapter = ADCD
+adapter = ACAD
 full-at = 100
 
 format-charging =   <animation-charging> <label-charging>
@@ -171,7 +171,7 @@ format-discharging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full> <ramp-capacity>
 format-full-padding = 1
-format-full-background = ${colors.active}
+format-full-background = ${colors.inactive}
 
 ramp-capacity-0 = 
 ramp-capacity-1 =  
@@ -187,8 +187,8 @@ animation-charging-1 = 
 animation-charging-2 =  
 animation-charging-3 = 
 animation-charging-4 =  
-format-charging-background = ${colors.highlight}
-format-discharging-background = ${colors.active}
+format-charging-background = ${colors.inactive}
+format-discharging-background = ${colors.inactive}
 
 [settings]
 screenchange-reload = true
