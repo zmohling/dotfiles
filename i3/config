@@ -73,8 +73,9 @@ exec --no-startup-id feh --bg-fill --no-xinerama ~/pictures/wallpapers/current/w
 exec --no-startup-id betterlockscreen -u ~/pictures/wallpapers/current/wallpaper -b 3
 exec --no-startup-id xautolock -time 5 -locker "i3exit lock" -killtime 10 -killer "xset dpms force off" -nowlocker "betterlockscreen -l blur"
 exec --no-startup-id redshift -l 42.0:-93.6 -t 5700:3600 -g 0.8 -m randr -v
+exec --no-startup-id vpn start
 # Restart
-exec_always --no-startup-id ~/.config/scripts/set-wallpaper.sh
+exec_always --no-startup-id ~/scripts/set-wallpaper.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 exec_always --no-startup-id sbxkb
@@ -99,7 +100,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle;exec xautolock -toggle > /dev/null 2>&1;exec notify-send 'Xautolock Toggled'
+bindsym $mod+f fullscreen toggle;exec ~/scripts/toggle-xautolock.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -155,10 +156,10 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 mode "resize" {
         # resize windows
-        bindsym l resize shrink width 10 px or 5 ppt
+        bindsym h resize shrink width 10 px or 5 ppt
         bindsym j resize grow height 10 px or 5 ppt
         bindsym k resize shrink height 10 px or 5 ppt
-        bindsym h resize grow width 10 px or 5 ppt
+        bindsym l resize grow width 10 px or 5 ppt
 
         # resize gaps
         bindsym minus       gaps outer current plus 10
