@@ -72,7 +72,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id feh --bg-fill --no-xinerama ~/pictures/wallpapers/current/wallpaper
 exec --no-startup-id betterlockscreen -u ~/pictures/wallpapers/current/wallpaper -b 3
 exec --no-startup-id xautolock -time 5 -locker "i3exit lock" -killtime 10 -killer "xset dpms force off" -nowlocker "betterlockscreen -l blur"
-exec --no-startup-id redshift -l 42.0:-93.6 -t 5700:3600 -g 0.8 -m randr -v
+exec --no-startup-id redshift -l 42.0:-93.6 -t 4500:3000 -g 0.8 -m randr -v
 exec --no-startup-id vpn start
 # Restart
 exec_always --no-startup-id ~/scripts/set-wallpaper.sh
@@ -240,6 +240,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="hw4.TicTacToe"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
