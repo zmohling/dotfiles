@@ -1,13 +1,13 @@
-""""""""""""""""""""""""""""""""""""""""""""""""
-"                   MY VIMRC                   "
-"       CONFIGURED FOR C/C++ DEVELOPMENT       "
-""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        ZACH'S VIMRC                        "
+"              CONFIGURED FOR C/C++ DEVELOPMENT              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM INITIAL SETUP
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Init temporary files' directory structure
 if empty(glob("~/.vim/temp_dirs"))
@@ -30,9 +30,9 @@ endif
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM-PLUG PLUGIN MANAGER
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugins')
 
@@ -55,12 +55,13 @@ call plug#end()
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => PLUGIN CONFIGURATION
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""" ALE """""""""
 
+""""""""""""""""" ALE """""""""""""""""
+" Set linters, notably: Google's cpplint for C/C++ linting
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['flake8'],
@@ -69,28 +70,30 @@ let g:ale_linters = {
 \   'cpp': ['cpplint']
 \}
 
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
 " Disabling highlighting
-let g:ale_set_highlights = 1
+let g:ale_set_highlights = 0
 
 " C/C++ Options
-"let g:ale_c_clang_options = '-Wall -ggdb3 -lm'
+let g:ale_c_clang_options = '-Wall'
 
-" Only run linting on text change
+" Lint on leave insert mode
 let g:ale_lint_on_text_changed = 'always'
 
+" Javascript fixer
 let g:ale_fixers = {
  \ 'javascript': ['eslint'],
  \ }
 
 let g:ale_fix_on_save = 1
 
-""""""""" SURROUND """""""""
+
+""""""""""""""""" SURROUND """""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
-""""""""" LIGHTLINE """""""""
+
+""""""""""""""""" LIGHTLINE """""""""""""""""
+" Statusbar color and formatting
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
@@ -116,7 +119,8 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
 
-""""""""" CLANG-FORMAT """""""""
+
+""""""""""""""""" CLANG-FORMAT """""""""""""""""
 let g:clang_format#code_style = "google"
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
@@ -127,13 +131,16 @@ let g:clang_format#style_options = {
 " Format on save
 autocmd FileType c,cc,cpp ClangFormatAutoEnable
 
+" No fallback style if clang-format missing
 let g:clang_format#enable_fallback_style = 0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Sets how many lines of history VIM has to remember
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Sets how many lines of history VIM remembers
 set history=500
 
 " Enable filetype plugins
@@ -160,34 +167,34 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Set .viminfo location to temp_dir
+set viminfo+=n~/.vim/temp_dirs/viminfo
+
 " Turn persistent undo on 
 set undodir=~/.vim/temp_dirs/undodir
 set undofile
 
-" Set .viminfo location to temp_dir
-set viminfo+=n~/.vim/temp_dirs/viminfo
-
-" tell vim where to put its backup files
+" Backup files directory
 set backupdir=~/.vim/temp_dirs/backups
 
-" tell vim where to put swap files
+" Swap files directory
 set dir=~/.vim/temp_dirs/swap
 
-" tell vim to keep a backup file
+" Create a backup files
 set backup
 set writebackup
 
-" tell vim to keep swap files
+" Create swap files
 set swapfile
 
-" tell vim not to store network history
+" Do not store network history
 let g:netrw_dirhistmax = 0
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM UI
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Colorscheme
 try
@@ -205,7 +212,6 @@ syntax enable
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
 
 " Set dark mode
 set background=dark
@@ -229,7 +235,7 @@ set guioptions-=L
 " Height of the command bar
 set cmdheight=1
 
-" Add a bit extra margin to the left
+" Left margin
 set foldcolumn=1
 
 " Always show the status line
@@ -239,9 +245,10 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM behavior
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -265,9 +272,6 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee,*.c,*.cc,*.cpp,*.h :call CleanExtraSpaces()
 endif
-
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
 
 " Ignore case when searching
 set ignorecase
@@ -300,9 +304,9 @@ set tm=500
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Tab and Indent
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use spaces instead of tabs
 set expandtab
@@ -324,9 +328,10 @@ set wrap "Wrap lines
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
