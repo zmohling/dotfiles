@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/zachary/.config/wpg/wallpapers/trianglify.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#1b161c",
+        "foreground": "#fbfff9",
+        "cursor": "#fbfff9"
+    },
+    "colors": {
+        "color0": "#1b161c",
+        "color1": "#4697a6",
+        "color2": "#8C9971",
+        "color3": "#579f9a",
+        "color4": "#d1b785",
+        "color5": "#1A9E6C",
+        "color6": "#728A6D",
+        "color7": "#c6cdc4",
+        "color8": "#302732",
+        "color9": "#4bcee7",
+        "color10": "#bcd881",
+        "color11": "#61ded5",
+        "color12": "#fff496",
+        "color13": "#15d98f",
+        "color14": "#89c37d",
+        "color15": "#fbfff9"
+    }
+}

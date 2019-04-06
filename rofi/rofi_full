@@ -1,6 +1,6 @@
 * {
 	accent: #FFFFFF;
-    foreground:         		@accent;
+    foreground:				    rgba(255, 255, 255, 0.8);
     background:         		rgba(0, 0, 0, 0.70);
     transparent:				rgba(0, 0, 0, 0);
 

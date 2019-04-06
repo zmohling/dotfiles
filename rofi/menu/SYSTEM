@@ -10,11 +10,11 @@ REBOOT
 POWEROFF" | awk '{print $(NF-1)}' | rofi "${ROFI_OPTIONS[@]}" -dmenu -i -p "SYSTEM: ")
 
 if [ "$another" == "LOCK" ] ; then
-	i3exit lock;
+	betterlockscreen -l blur;
 elif [ "$another" == "SUSPEND" ] ; then
 	i3exit suspend;
 elif [ "$another" == "LOGOUT" ] ; then
-	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3exit exit
+	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3-msg exit
 	
 elif [ "$another" == "REBOOT" ] ; then
 	[ $(echo -e "Yes\nNo" | rofi "${ROFI_OPTIONS[@]}" -theme-str "*{accent: #e53714;}" -dmenu -i -p "Are you shure you want to proceed?") == Yes ] && i3exit reboot

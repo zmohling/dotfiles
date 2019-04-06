@@ -5,10 +5,10 @@
 
 case "$1" in
     lock)
-        xautolock -locknow
+        betterlockscreen -l blur
         ;;
     exit)
-        $logind exit
+        i3-msg exit
         ;;
     switch_user)
         dm-tool switch-to-greeter

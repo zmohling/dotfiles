@@ -66,15 +66,16 @@ let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
-\   'c': ['cpplint'],
-\   'cpp': ['cpplint']
+\   'c': ['gcc', 'cpplint'],
+\   'cc': ['gcc', 'cpplint'],
+\   'h': ['gcc', 'cpplint']
 \}
 
 " Disabling highlighting
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = 1
 
 " C/C++ Options
-let g:ale_c_clang_options = '-Wall'
+"let g:ale_c_clang_options = '-Wall'
 
 " Lint on leave insert mode
 let g:ale_lint_on_text_changed = 'always'
@@ -132,7 +133,7 @@ let g:clang_format#style_options = {
 autocmd FileType c,cc,cpp ClangFormatAutoEnable
 
 " No fallback style if clang-format missing
-let g:clang_format#enable_fallback_style = 0
+let g:clang_format#enable_fallback_style = 1
 
 
 
