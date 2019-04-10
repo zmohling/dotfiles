@@ -2,11 +2,11 @@
 
 insidecolor=00000000
 ringcolor=ffffffff
-keyhlcolor=#B0DCB9ff
-bshlcolor=#B0DCB9ff
+keyhlcolor=#859900ff
+bshlcolor=#859900ff
 separatorcolor=00000000
 insidevercolor=00000000
-insidewrongcolor=#9FB0C2ff
+insidewrongcolor=#dc322fff
 ringvercolor=ffffffff
 ringwrongcolor=ffffffff
 verifcolor=ffffffff

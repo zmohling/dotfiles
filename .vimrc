@@ -51,6 +51,9 @@ Plug 'tpope/vim-surround'
 " A light and configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
 
+" Solarized for Vim
+Plug 'altercation/vim-colors-solarized' 
+
 call plug#end()
 
 
@@ -67,8 +70,9 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
 \   'c': ['gcc', 'cpplint'],
-\   'cc': ['gcc', 'cpplint'],
-\   'h': ['gcc', 'cpplint']
+\   'cc': ['g++', 'cpplint'],
+\   'cpp': ['g++', 'cpplint'],
+\   'h': ['g++', 'cpplint']
 \}
 
 " Disabling highlighting
@@ -100,7 +104,7 @@ let g:lightline = {
       \ }
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],
@@ -197,25 +201,24 @@ let g:netrw_dirhistmax = 0
 " => VIM UI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Colorscheme
-try
-    colorscheme wpgtk
-catch
-endtry
-
-" Set font
-set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+" force vim to use 256 colors
+set t_Co=16
 
 " Enable syntax highlighting
 syntax enable 
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
 " Set dark mode
-set background=dark
+set background=light
+
+" Colorscheme
+try
+    colorscheme solarized
+catch
+    colorscheme wpgtk
+endtry
+
+" Set font
+set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
 
 " Set hybrid relative line numbering
 set number relativenumber

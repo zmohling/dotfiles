@@ -2,6 +2,12 @@
 # ~/.bashrc
 #
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 [[ $- != *i* ]] && return
 
 colors() {
@@ -123,7 +129,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -155,7 +161,7 @@ export BROWSER=/usr/bin/firefox
 export PAGER=/usr/bin/less
 
 # wpgtk
-cat ~/.config/wpg/sequences 
+# cat ~/.config/wpg/sequences 
 
 # aliases
 alias vi="vim"

@@ -1,20 +1,21 @@
 [Alsa]
 card=default
+channel=Master
 
 [Notification]
-show_notification=true
-notification_type=1
+show_notification=false
+notification_type=0
 
 [StatusIcon]
 stepsize=5
-onclick=urxvt -e 'alsamixer'
-theme=White Gnome
-use_panel_specific_icons=true
-lmb_slider=true
-mmb_mute=true
+onclick=pavucontrol
+theme=Default
+use_panel_specific_icons=false
+lmb_slider=false
+mmb_mute=false
 use_horizontal_slider=false
-show_sound_level=true
-use_transparent_background=true
+show_sound_level=false
+use_transparent_background=false
 
 [Hotkeys]
 up_enabled=true

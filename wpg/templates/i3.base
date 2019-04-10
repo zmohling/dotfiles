@@ -65,7 +65,6 @@ bindsym XF86PowerOff exec i3exit poweroff
 # Start up
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/.config/wpg/wp_init.sh
-exec --no-startup-id volumeicon
 exec --no-startup-id urxvtd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -75,7 +74,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id feh --bg-fill --no-xinerama ~/pictures/wallpapers/current/wallpaper
 exec --no-startup-id betterlockscreen -u ~/pictures/wallpapers/current/wallpaper -b 3
 exec --no-startup-id xautolock -time 5 -locker "i3exit lock" -killtime 10 -killer "xset dpms force off" -nowlocker "betterlockscreen -l blur"
-exec --no-startup-id redshift -l 42.0:-93.6 -t 4500:3000 -g 0.8 -m randr -v
+exec redshift -l 42.0:-93.6 -t 4500:3000 -g 0.8 -m randr -v
 
 # Restart
 exec_always --no-startup-id ~/scripts/set-wallpaper.sh
@@ -197,16 +196,16 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # assign output device to workspaces
-exec --no-startup-id i3-msg "workspace 1 output $secondary_display"
-exec --no-startup-id i3-msg "workspace 2 output $secondary_display"
-exec --no-startup-id i3-msg "workspace 3 output $secondary_display"
-exec --no-startup-id i3-msg "workspace 4 output $secondary_display"
-exec --no-startup-id i3-msg "workspace 5 output $secondary_display"
-exec --no-startup-id i3-msg "workspace 6 output $primary_display"
-exec --no-startup-id i3-msg "workspace 7 output $primary_display"
-exec --no-startup-id i3-msg "workspace 8 output $primary_display"
-exec --no-startup-id i3-msg "workspace 9 output $primary_display"
-exec --no-startup-id i3-msg "workspace 10 output $primary_display"
+# exec --no-startup-id i3-msg "workspace 1 output $secondary_display"
+# exec --no-startup-id i3-msg "workspace 2 output $secondary_display"
+# exec --no-startup-id i3-msg "workspace 3 output $secondary_display"
+# exec --no-startup-id i3-msg "workspace 4 output $secondary_display"
+# exec --no-startup-id i3-msg "workspace 5 output $secondary_display"
+# exec --no-startup-id i3-msg "workspace 6 output $primary_display"
+# exec --no-startup-id i3-msg "workspace 7 output $primary_display"
+# exec --no-startup-id i3-msg "workspace 8 output $primary_display"
+# exec --no-startup-id i3-msg "workspace 9 output $primary_display"
+# exec --no-startup-id i3-msg "workspace 10 output $primary_display"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -220,18 +219,16 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# applications
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/xterm -e gotop'
-
 ##### WINDOWS ######
-assign [title = "gotop"] 1
-assign [class = "Firefox"] 6
-assign [class = "Spotify"] 10
-assign [class = "Slack"] 10
+# assign [title = "gotop"] 1
+# assign [class = "Firefox"] 6
+# assign [class = "Spotify"] 10
+# assign [class = "Slack"] 10
 # assign [class = "DBeaver"] 3
 # assign [class = "zoom"] 9
 # assign [instance = "music"] 10
 
+for_window [class="Clamtk"] floating enable
 for_window [class="Anki" title="Add"] floating enable
 for_window [class="Wpg"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/zachary/.config/wpg/wallpapers/Solarized-Mountains.png",
+    "alpha": "100",
+    "special": {
+        "background": "#dfeff2",
+        "foreground": "#002B36",
+        "cursor": "#002B36"
+    },
+    "colors": {
+        "color0": "#dfeff2",
+        "color1": "#869900",
+        "color2": "#B68800",
+        "color3": "#C28E00",
+        "color4": "#4D5D9A",
+        "color5": "#6D70C4",
+        "color6": "#D33682",
+        "color7": "#002B36",
+        "color8": "#195b67",
+        "color9": "#869900",
+        "color10": "#B68800",
+        "color11": "#C28E00",
+        "color12": "#4D5D9A",
+        "color13": "#6D70C4",
+        "color14": "#D33682",
+        "color15": "#002B36"
+    }
+}
