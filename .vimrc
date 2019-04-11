@@ -36,11 +36,13 @@ endif
 
 call plug#begin('~/.vim/plugins')
 
-" Plugin for C/C++ auto-formatting
-Plug 'rhysd/vim-clang-format'
+" Plugin Suite made by Google
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
 " Plugin for WPGTK & Pywal colorscheming
-Plug 'deviantfero/wpgtk.vim'
+"Plug 'deviantfero/wpgtk.vim'
 
 " Plugin for asynchronous linting/fixing
 Plug 'w0rp/ale'
@@ -51,10 +53,15 @@ Plug 'tpope/vim-surround'
 " A light and configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
 
-" Solarized for Vim
-Plug 'altercation/vim-colors-solarized' 
+" Solarized8 for Vim
+Plug 'lifepillar/vim-solarized8'
+
+" Base16 for Vim
+"Plug 'chriskempson/base16-vim/'
 
 call plug#end()
+
+call glaive#Install()
 
 
 
@@ -89,7 +96,7 @@ let g:ale_fixers = {
  \ 'javascript': ['eslint'],
  \ }
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 
 """"""""""""""""" SURROUND """""""""""""""""
@@ -125,19 +132,22 @@ let g:lightline = {
       \ }
 
 
-""""""""""""""""" CLANG-FORMAT """""""""""""""""
-let g:clang_format#code_style = "google"
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11"}
+""""""""""""""""" VIM-CODEDMT """""""""""""""""
+" Auto-formatting
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cc,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END
 
-" Format on save
-autocmd FileType c,cc,cpp ClangFormatAutoEnable
-
-" No fallback style if clang-format missing
-let g:clang_format#enable_fallback_style = 1
+" use google style for clang-format
+Glaive codefmt clang_format_style='google'
 
 
 
@@ -202,23 +212,24 @@ let g:netrw_dirhistmax = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " force vim to use 256 colors
-set t_Co=16
+set t_Co=256
 
 " Enable syntax highlighting
 syntax enable 
 
-" Set dark mode
+" Set light/dark mode
 set background=light
 
 " Colorscheme
 try
-    colorscheme solarized
+    set termguicolors
+    colorscheme solarized8_high
 catch
-    colorscheme wpgtk
+    colorscheme default
 endtry
 
 " Set font
-set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+set gfn=Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
 
 " Set hybrid relative line numbering
 set number relativenumber
@@ -254,7 +265,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " => VIM behavior
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Configure backspace so it acts as it should act
+" Fix default backspace
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
@@ -321,6 +332,9 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+
+" indent for special file
+autocmd FileType c,cc,cpp,h setlocal expandtab shiftwidth=2 softtabstop=2 cindent 
 
 " Linebreak on 500 characters
 set lbr
