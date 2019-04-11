@@ -2,16 +2,16 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $coloract "#eab101"
-set $colorin "#b58900"
+set $coloract "#8f6d01"
+set $colorin "#624a01"
 set $primary_display "$(get_display.sh primary)"
 set $secondary_display "$(get_display.sh secondary)"
 set $terminal kitty
-set_from_resource $color15 i3wm.color15 "#002b36"
+set_from_resource $color15 i3wm.color15 "#fdf6e3"
 set_from_resource $split i3wm.color10 "#859900"
 set_from_resource $coloru i3wm.color2 "#859900"
-set_from_resource $color0 i3wm.color0 "#fdf6e3"
-set_from_resource $color8 i3wm.color8 "#839496"
+set_from_resource $color0 i3wm.color0 "#002b36"
+set_from_resource $color8 i3wm.color8 "#657b83"
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1

@@ -1,6 +1,6 @@
 [colors]
-	background = "#839496"
-	foreground = "#002b36"
+	background = "#657b83"
+	foreground = "#fdf6e3"
 
 [global]
     ### Display ###
@@ -18,7 +18,7 @@
     horizontal_padding = 12
     frame_width = 3
 
-    frame_color = "#eab101"
+    frame_color = "#8f6d01"
     separator_color = auto
     sort = yes
     idle_threshold = 120
