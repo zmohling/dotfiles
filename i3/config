@@ -60,6 +60,8 @@ bindsym $mod+p exec ~/.config/rofi/menu/SYSTEM
 bindsym XF86Sleep exec i3exit suspend
 bindsym XF86PowerOff exec i3exit poweroff
 
+bindsym $mod+Shift+plus   exec  xbacklight -inc 10
+bindsym $mod+Shift+minus  exec  xbacklight -dec 10
 
 ###### APPLICATIONS ######
 # Start up
@@ -230,6 +232,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 for_window [class="Clamtk"] floating enable
 for_window [class="Anki" title="Add"] floating enable
+for_window [class="Anki" title="Edit Current"] floating enable
 for_window [class="Wpg"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Calamares"] floating enable border normal
